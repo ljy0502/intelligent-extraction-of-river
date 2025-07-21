@@ -28,3 +28,6 @@ You can install the Python dependencies using this command:
 
 ```bash
 pip install torch numpy opencv-python matplotlib rasterio pillow
+###  River Channel Extraction
+
+By importing raster TIFF image data and employing an interactive foreground and background sample point annotation approach, the Segment Anything Model (SAM) is invoked to perform intelligent segmentation of river channel features, generating high-precision binary masks for accurate extraction of fluvial elements.
