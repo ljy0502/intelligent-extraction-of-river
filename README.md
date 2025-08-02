@@ -6,6 +6,7 @@
 ```bash
 git clone https://github.com/facebookresearch/sam2.git && cd sam2
 pip install -e .
+```
 
 2.Download this code locally.
 
