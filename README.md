@@ -33,17 +33,21 @@ This code extracts river channels using SAM2 and converts them into binary image
 
 ## Usage
 1.Prepare remote sensing imagery in .tif format (with geospatial information) and the corresponding .jpg format.
+
 2.Modify the following content in the script to meet your needs:
 * tiff_path: Geo-referenced .tif file
 * input_image_path: Preprocessed .jpg image
 * sam2_checkpoint: Path to the SAM2 model
 * model_cfg: Configuration file corresponding to the model
 * binary_mask_tiff_dir: Output directory for the results
+
 3.Run the script.
 * Left-click to mark the area of interest (foreground points).
 * Right-click to mark the area not of interest (background points).
 * To ensure segmentation accuracy, you can click as many foreground and background points as needed.
 * model_cfg: Configuration file corresponding to the model
 * After clicking, close the visualization window
+  
 4.The .jpg image will be segmented, and the geospatial information from the .tif image will be assigned to the segmentation result.
+
 5.The prediction result will be saved as a .tif image.
