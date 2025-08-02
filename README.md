@@ -42,11 +42,7 @@ This code extracts river channels using SAM2 and converts them into binary image
 * binary_mask_tiff_dir: Output directory for the results
 
 3.Run the script.
-* Left-click to mark the area of interest (foreground points).
-* Right-click to mark the area not of interest (background points).
-* To ensure segmentation accuracy, you can click as many foreground and background points as needed.
-* model_cfg: Configuration file corresponding to the model
-* After clicking, close the visualization window
+Run the script and use the left mouse button to click and mark regions of interest (foreground points), and the right mouse button to mark regions that are not of interest (background points). To ensure segmentation accuracy, you can mark as many foreground and background points as possible. After finishing the marking process, close the visualization window.
   
 4.The .jpg image will be segmented, and the geospatial information from the .tif image will be assigned to the segmentation result.
 
