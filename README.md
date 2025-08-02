@@ -37,7 +37,7 @@ This code extracts river channels using SAM2 and converts them into binary image
 2.Modify the following content in the script to meet your needs:
 * tiff_path: Geo-referenced .tif file
 * input_image_path: Preprocessed .jpg image
-* sam2_checkpoint: Path to the SAM2 model
+* sam2_checkpoint: Path to the SAM2 model.If you are using the sam2.1_hiera_large.pt model, you do not need to modify the model_cfg in the codeI
 * model_cfg: Configuration file corresponding to the model
 * binary_mask_tiff_dir: Output directory for the results
 
