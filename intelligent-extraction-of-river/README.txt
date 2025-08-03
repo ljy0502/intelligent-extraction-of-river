@@ -1,40 +1,50 @@
-Installation
-1. Use the following command to install SAM2 on a GPU machine (python>=3.10 torch>=2.5.1 torchvision>=0.20.1):
-  git clone https://github.com/facebookresearch/sam2.git && cd sam2
-  pip install -e .
+# Installation and Usage Guide for SAM2-based River Channel Extraction
 
-2. Download this code to your local machine
+## Installation
 
-3. Place this code in the root directory of SAM2
+1. Use the following command to install SAM2 on a GPU computer (python>=3.10, torch>=2.5.1, torchvision>=0.20.1):
+```bash
+git clone https://github.com/facebookresearch/sam2.git && cd sam2
+pip install -e .
+```
 
-4. Make sure the following dependencies are installed:
-•	numpy
-•	matplotlib
-•	pillow
-•	opencv-python
-•	rasterio
-•	scikit-image
-•	tk (optional, required if running on a Linux server)
+2.Download this code locally.
 
-You can install these dependencies using the following command:
+3.Place this code in the root directory of SAM2.
+
+4.Ensure the following dependencies are installed:
+
+* numpy
+* matplotlib
+* pillow
+* opencv-python
+* rasterio
+* scikit-image
+* tk(optional, required if running on a Linux server)
+
+You can install these dependencies using:
+
+```bash
 pip install numpy matplotlib pillow opencv-python rasterio scikit-image
+```
 
+## Meandering River Channel Extraction
+This code extracts river channels using SAM2 and converts them into binary images for subsequent geometric parameter extraction of narrow-banded meandering rivers in ArcGIS.
 
-Meandering River Channel Extraction
-This code is used to extract river channels from remote sensing images using SAM2 and convert them into binary images. The subsequent extraction of geometric parameters of narrow meandering rivers in ArcGIS will be based on this segmentation result.
+## Usage
+1.Prepare remote sensing imagery in .tif format (with geospatial information) and the corresponding .jpg format.
 
-Usage
-1. Prepare remote sensing images in both .tif format (with geospatial information) and corresponding .jpg format
+2.Modify the following content in the script to meet your needs:
+* tiff_path: Geo-referenced .tif file
+* input_image_path: Preprocessed .jpg image
 
-2. Modify the following script parameters to suit your needs:
-•	tiff_path: Geo-referenced .tif file
-•	input_image_path: Preprocessed .jpg image path
-•	sam2_checkpoint: SAM2 model checkpoint
-•	model_cfg: Configuration file corresponding to the model
-•	binary_mask_tiff_dir: Output directory for results
+* sam2_checkpoint: Path to the SAM2 model.You can download it from the "Download Checkpoints" section on the https://github.com/facebookresearch/sam2 webpage.
+* model_cfg: Configuration file corresponding to the model.If you are using the sam2.1_hiera_large.pt model, you do not need to modify the model_cfg in the code.
+* binary_mask_tiff_dir: Output directory for the results
 
-3. Run the script, left-click to mark regions of interest (foreground points), right-click to mark regions not of interest (background points). To ensure segmentation accuracy, you can click as many foreground and background points as possible. After finishing point selection, close the visualization window.
+3.Run the script.
+Run the script and use the left mouse button to click and mark regions of interest (foreground points), and the right mouse button to mark regions that are not of interest (background points). To ensure segmentation accuracy, you can mark as many foreground and background points as possible. After finishing the marking process, close the visualization window.
 
-4. The .jpg image will be segmented, and the geospatial information of the .tif image will be assigned to the segmentation result.
+4.The .jpg image will be segmented, and the geospatial information from the .tif image will be assigned to the segmentation result.
 
-5. The prediction result will be saved as a .tif image
+5.The prediction result will be saved as a .tif image.

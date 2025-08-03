@@ -37,13 +37,14 @@ This code extracts river channels using SAM2 and converts them into binary image
 2.Modify the following content in the script to meet your needs:
 * tiff_path: Geo-referenced .tif file
 * input_image_path: Preprocessed .jpg image
-* sam2_checkpoint: Path to the SAM2 model
+
+* sam2_checkpoint: Path to the SAM2 model.You can download it from the "Download Checkpoints" section on the https://github.com/facebookresearch/sam2 webpage.
 * model_cfg: Configuration file corresponding to the model.If you are using the sam2.1_hiera_large.pt model, you do not need to modify the model_cfg in the code.
 * binary_mask_tiff_dir: Output directory for the results
 
 3.Run the script.
 Run the script and use the left mouse button to click and mark regions of interest (foreground points), and the right mouse button to mark regions that are not of interest (background points). To ensure segmentation accuracy, you can mark as many foreground and background points as possible. After finishing the marking process, close the visualization window.
-  
+
 4.The .jpg image will be segmented, and the geospatial information from the .tif image will be assigned to the segmentation result.
 
 5.The prediction result will be saved as a .tif image.
